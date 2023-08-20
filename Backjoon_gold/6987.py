@@ -1,19 +1,14 @@
-# 월드컵
+# 월드컵_시뮬레이션 x 백트래킹으로 다시 시도
 
 import sys
 
 input = sys.stdin.readline
 
-def f(res):
-    mid = 0
-    for i in range(6):
-        s = sum(res[3*i:3*(i+1)])
-        mid += ((-1)**(i))*res[3*i+1]
-        if s != 5:
-            return 0
-    if mid != 0:
-        return 0
-    return 1
+global cnt
+def f(data):
+    if cnt == 15:
+        return 1
+    
 
 sol = []
 for _ in range(4):
