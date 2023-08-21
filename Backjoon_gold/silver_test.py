@@ -3,8 +3,11 @@ from collections import deque
 input = sys.stdin.readline
 
 n = int(input())
-a = list(map(int, input().split()))
-b = list(map(int, input().split()))
-m = int(input())
-c = list(map(int, input().split()))
+idx_data = deque([i for i in range(1, n+1)])
+val_data = deque(map(int, input().split()))
 
+while val_data:
+    print(idx_data.pop())
+    x = val_data.pop()
+    for i in range(x):
+        
