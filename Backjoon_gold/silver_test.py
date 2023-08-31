@@ -1,14 +1,14 @@
+#1074 진행중
+
 import sys
 from collections import deque
 
-n = int(input())
-data = [list(map(int, input().split())) for _ in range(n)]
+n, r, c = map(int, input().split())
+res = 0
 
-a = 0
-b = 0
-def sol(data, size):
-    global a, b
+def sol():
+    global res
     
-    for i in range(size):
-        for j in range(size):
-            data[i][j]
+    
+
+print(res)
