@@ -1,14 +1,13 @@
-#1074 진행중
-
 import sys
-from collections import deque
 
-n, r, c = map(int, input().split())
-res = 0
+input = sys.stdin.readline
+n, m = map(int, input().split())
 
-def sol():
-    global res
-    
-    
+data = []
 
-print(res)
+for _ in range(m):
+    data.append(sorted(list(map(int, input().split()))))
+
+data.sort(key=lambda x: (x[0], x[1]))
+
+print(data)
