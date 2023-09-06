@@ -2,37 +2,16 @@ import sys
 from collections import deque
 input = sys.stdin.readline
 
-n, m = map(int, input().split())
-data = [list(input().rstrip()) for _ in range(n)]
-visited = [[0 for _ in range(m)] for _ in range(n)]
-direction = [(+1, 0), (-1, 0), (0, -1), (0, +1)]
+t = int(input())
 
-for i in range(n):
-    for j in range(m):
-        if data[i][j] == 'I':
-            start_x = i
-            start_y = j
-            break
+def dis(data_three):
+    tmp = {'E':0, 'I':0, 'S':0, 'N':0, 'T':0, 'F':0, 'J':0, 'P':0}
+    for i in range(3):
+        for j in range(4):
+            tmp[data_three[i][j]] += 1
+    return tmp['E']*tmp['I']+tmp['S']*tmp['N']+tmp['T']*tmp['F']+tmp['J']*tmp['P']
 
-cnt = 0
-q = deque()
-q.append((start_x, start_y))
-
-while q:
-    (x, y) = q.popleft()
-    print(x, y)
-    if not visited[x][y]:
-        visited[x][y] = 1
-        for (dx, dy) in direction:
-            nx = x+dx
-            ny = y+dy
-            if nx in range(n) and ny in range(m):
-                if data[nx][ny] == 'O':
-                    visited[nx][ny] = 1
-                    q.append((nx, ny))
-                elif data[nx][ny] == 'P':
-                    visited[nx][ny] = 1
-                    q.append((nx, ny))
-                    cnt += 1
-
-print(cnt)
+for _ in range(t):
+    n = int(input())
+    data = list(map(str, input().split()))
+    
