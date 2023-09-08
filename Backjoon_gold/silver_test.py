@@ -19,12 +19,14 @@ def dfs(x):
     cnt = 1
     while stack:
         tmp_x = stack.pop()
-
         if visited[tmp_x] == 0:
             visited[tmp_x] = cnt
             stack.extend(data[tmp_x])
-    return visited        
+            cnt += 1
+        else:
+            cnt -= 1
+    return visited
         
     
-for i in range(n):
+for i in range(1, n+1):
     print(dfs(i))
