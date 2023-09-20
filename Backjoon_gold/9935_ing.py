@@ -1,13 +1,16 @@
 # 문자열 폭발
 
 import sys
+from collections import deque
 input = sys.stdin.readline
 
-s = input().rstrip()
-bomb = input().rstrip()
+s = deque(enumerate(input().rstrip()))
+bomb = deque(input().rstrip())
 
-stack = []
+q = deque([])
 
-for i in range(len(s)):
-    stack.append(s[i])
-    print(stack)
+print(s)
+
+idx = 0
+while idx != len(s)-1:
+    print(s.popleft(), end='')
