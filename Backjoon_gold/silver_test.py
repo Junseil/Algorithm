@@ -21,3 +21,6 @@ for _ in range(t):
         print(data[ord(alphabet)-ord('a')][r])
     else:
         print(data[ord(alphabet)-ord('a')][r]-data[ord(alphabet)-ord('a')][l-1])
+        
+        
+# 면접 진행
